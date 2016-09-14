@@ -77,6 +77,11 @@ class EntityManagerAwareTestCaseTest extends EntityManagerAwareTestCase
                  ->with($this->equalTo('table2'))
                  ->will($this->returnValue('TRUNCATE table2'));
 
+        $expectedQuery = 'TRUNCATE table1;TRUNCATE table2;';
+        $connection->expects($this->once())
+                   ->method('executeQuery')
+                   ->with($this->equalTo($expectedQuery));
+
         $this->truncateEntities(['TestEntity1', 'TestEntity2']);
     }
 }

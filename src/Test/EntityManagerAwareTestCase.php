@@ -28,10 +28,12 @@ class EntityManagerAwareTestCase extends ContainerAwareTestCase
         $connection = $em->getConnection();
         $platform = $connection->getDatabasePlatform();
 
+        $sql = '';
         foreach ($entityClassnames as $entityClassname) {
             $metadata = $em->getClassMetadata($entityClassname);
             $tablename = $metadata->getTableName();
-            $sql = $platform->getTruncateTableSQL($tablename);
+            $sql .= $platform->getTruncateTableSQL($tablename) . ';';
         }
+        $connection->executeQuery($sql);
     }
 }
