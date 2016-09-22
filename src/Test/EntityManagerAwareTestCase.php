@@ -1,5 +1,4 @@
 <?php
-
 namespace Reddogs\Doctrine\Test;
 
 use Reddogs\Test\ContainerAwareTestCase;
@@ -7,6 +6,7 @@ use Doctrine\ORM\EntityManager;
 
 class EntityManagerAwareTestCase extends ContainerAwareTestCase
 {
+
     /**
      * Get entity manager
      *
