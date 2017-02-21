@@ -24,7 +24,7 @@ class EntityManagerAwareTestCaseTest extends EntityManagerAwareTestCase
         $entityManager = $this->createMock(EntityManager::class);
         $this->container->expects($this->once())
                         ->method('get')
-                        ->with($this->equalTo('doctrine.entitymanager.orm_default'))
+                        ->with($this->equalTo(EntityManager::class))
                         ->will($this->returnValue($entityManager));
         $this->assertSame($entityManager, $this->getEntityManager());
     }
@@ -34,7 +34,7 @@ class EntityManagerAwareTestCaseTest extends EntityManagerAwareTestCase
         $entityManager = $this->createMock(EntityManager::class);
         $this->container->expects($this->once())
                         ->method('get')
-                        ->with($this->equalTo('doctrine.entitymanager.orm_default'))
+                        ->with($this->equalTo(EntityManager::class))
                         ->will($this->returnValue($entityManager));
 
         $connection = $this->createMock(Connection::class);

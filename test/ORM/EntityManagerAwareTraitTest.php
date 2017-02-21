@@ -4,8 +4,9 @@ namespace ReddogsTest\Doctrine\ORM;
 
 use Reddogs\Doctrine\ORM\EntityManagerAwareTrait;
 use Doctrine\ORM\EntityManager;
+use PHPUnit\Framework\TestCase;
 
-class EntityManagerAwareTraitTest extends \PHPUnit_Framework_TestCase
+class EntityManagerAwareTraitTest extends TestCase
 {
     private $trait;
 

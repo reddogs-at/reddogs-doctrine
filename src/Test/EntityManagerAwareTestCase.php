@@ -14,7 +14,7 @@ class EntityManagerAwareTestCase extends ContainerAwareTestCase
      */
     public function getEntityManager()
     {
-        return $this->getContainer()->get('doctrine.entitymanager.orm_default');
+        return $this->getContainer()->get(EntityManager::class);
     }
 
     /**
