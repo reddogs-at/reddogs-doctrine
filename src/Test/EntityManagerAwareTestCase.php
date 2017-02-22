@@ -1,10 +1,10 @@
 <?php
 namespace Reddogs\Doctrine\Test;
 
-use Reddogs\Test\ContainerAwareTestCase;
 use Doctrine\ORM\EntityManager;
+use Reddogs\Test\ServiceManagerAwareTestCase;
 
-class EntityManagerAwareTestCase extends ContainerAwareTestCase
+class EntityManagerAwareTestCase extends ServiceManagerAwareTestCase
 {
 
     /**
